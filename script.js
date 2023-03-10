@@ -25,16 +25,13 @@ document.querySelector("form").addEventListener("submit", function (event) {
 
   // Set the onload event handler
   xhr.onload = function () {
-    // Parse the JSON response from the server
-    const response = JSON.parse(xhr.responseText);
-
-    // Check the response status
-    if (response.status === "success") {
+    // Check the status of the response
+    if (xhr.status === 200) {
       // If the response is successful, display the success message
-      document.getElementById("result").innerHTML = response.message;
+      document.getElementById("result").innerHTML = xhr.response.message;
     } else {
       // If the response is not successful, display the error message
-      document.getElementById("result").innerHTML = response.error;
+      document.getElementById("result").innerHTML = xhr.response.error;
     }
   };
 
