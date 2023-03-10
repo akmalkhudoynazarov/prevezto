@@ -1,0 +1,345 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+  :root {
+    --red: #B22222;
+    --brown: #BC8379;
+    --pink: #FFF5F2;
+    --yellow: #F3EED9;
+    --gray: #DADDE2;
+    --black: #141C29;
+    --white: #ffffff;
+  }
+
+  h1{
+    font-size: clamp(2rem, 3vw, 3rem);
+  }
+  h2{
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    color: var(--brown);
+    padding-bottom: 20px;
+  }
+  h3{
+    font-size: clamp(1.3rem, 1.4vw, 1.4rem);
+    text-align: center;
+    padding: 30px 0 0;
+  }
+  h4{
+    font-size: 1.2rem;
+    padding: 20px 0;
+    color: var(--red);
+  }
+  p{
+    font-size: 1.1rem;
+    color: var(--black);
+  }
+  header {
+    background-color: var(--red);
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+  }
+  a {
+    color: var(--gray);
+    font-size: 1.5rem;
+  }
+  .navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+  }
+  .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+  }
+  .nav-branding {
+    font-size: 2em;
+  }
+  .nav-link {
+    transition: 0.7s ease;
+  }
+  .nav-link:hover {
+    opacity: 90%;
+  }
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--gray);
+  }
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu {
+      position: fixed;
+      left: -100%;
+      top: 70px;
+      bottom: 0;
+      gap: 0;
+      flex-direction: column;
+      background-color: var(--black);
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .nav-item {
+      margin: 16px 0;
+    }
+    .nav-menu.active {
+      left: 0;
+    }
+  }
+
+  /* Main section */
+  main{
+    position: relative;
+  }
+
+  /* Banner */
+  .banner{
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(img/TITULNA\ FOTO.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+  }
+  .banner h1{
+    text-align: center;
+    color: var(--gray);
+    text-transform: capitalize;
+  }
+
+  .hero-btn {
+    margin-top: 40px;
+    padding: 20px 40px;
+    border-radius: 8px;
+    border: 1px solid var(--gray);
+    background-color: var(--red);
+    font-size: 1.5rem;
+    color: var(--gray);
+    cursor: pointer;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    }
+    
+    @keyframes pulse {
+    0% {
+    transform: scale(1);
+    }
+    50% {
+    transform: scale(1.1);
+    }
+    100% {
+    transform: scale(1);
+    }
+    }
+
+    .hero-btn-2 {
+        padding: 15px 30px;
+        border: 1px solid var(--gray);
+        border-radius: 8px;
+        background-color: var(--red);
+        font-size: 1.5rem;
+        color: var(--gray);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .hero-btn-2:hover {
+        opacity: 90%;
+      }
+
+      .btn-container{
+        margin-top: 40px;
+        margin-bottom: 30px;
+      }
+ 
+  .invisible-height{
+    height: 100vh;
+  }
+
+   /* Abous us */
+  .about-us{
+    padding: 50px 20px 50px;
+    position: relative;
+    background-color: var(--gray);
+  }
+  .about-us h2, .about-us p{
+    text-align: center;
+  }
+  .about-container{
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items:baseline;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .about-container div{
+    flex-basis: 32%;
+    padding-bottom: 50px;
+  }
+  .about-container img{
+    width: 100%;
+    display: block;
+    border: 2px solid var(--black);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .about-container p{
+    color: var(--black);
+    font-weight: bold;
+  }
+
+ @media screen and (max-width: 768px) {
+    .about-container div{
+        flex-basis: 100%;
+    }
+ }
+  
+ /* Services */
+.services{
+    background-color: var(--white);
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+hr{
+    margin: 0 auto 40px;
+    border: 1.5px solid var(--brown);
+    width: 3%;
+}
+
+/* Balik */
+.balik{
+    background-color: var(--white);
+}
+.balik-container div{
+    flex-basis: 24%;
+}
+@media screen and (max-width: 768px) {
+    .balik-container div{
+        flex-basis: 100%;
+    }
+ }
+/* Booking */
+.booking{
+    background-color: var(--pink);
+}
+.booking-container div{
+    flex-basis: 48%;
+}
+.booking form{
+    width: 100%;
+}
+.booking input, .booking textarea{
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: none;
+    outline: none;
+}
+.booking input:focus, .booking textarea:focus{
+    border: 1px solid var(--red);
+}
+.booking .hero-btn-2{
+    width: 100%;
+}
+.booking a{
+    color: var(--black);
+}
+.booking hr{
+    margin: 20px auto;
+}
+
+@media screen and (max-width: 768px) {
+    .booking-container div{
+        flex-basis: 100%;
+    }
+ }
+
+/* Footer */
+.footer{
+    position: relative;
+    background-color: var(--red);
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    padding-top: 50px;
+}
+footer div{
+    flex-basis: 30%;
+    padding-bottom: 30px;
+}
+footer p{
+    color: var(--white);
+    text-align: center;
+    font-size: 1.5rem;
+}
+footer img{
+    display: block;
+    max-width: 50%;
+    margin: auto;
+}
+
+.footer hr{
+    width: 100%;
+    border: 0.5px solid var(--gray);
+    margin: 15px auto;
+}
+
+@media screen and (max-width: 768px) {
+    footer div{
+        flex-basis: 100%;
+    }
+ }
+
+ .copyright{
+    color: var(--gray);
+    text-align: center;
+    padding: 10px 0 20px;
+ }
