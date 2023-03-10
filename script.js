@@ -25,11 +25,17 @@ document.querySelector("form").addEventListener("submit", function (event) {
 
   // Set the onload event handler
   xhr.onload = function () {
-    // Get the response data
-    const response = xhr.response;
+    // Parse the JSON response from the server
+    const response = JSON.parse(xhr.responseText);
 
-    // Display the response message in the result div
-    document.querySelector("#result").innerHTML = response.message;
+    // Check the response status
+    if (response.status === "success") {
+      // If the response is successful, display the success message
+      document.getElementById("result").innerHTML = response.message;
+    } else {
+      // If the response is not successful, display the error message
+      document.getElementById("result").innerHTML = response.error;
+    }
   };
 
   // Set the onerror event handler
