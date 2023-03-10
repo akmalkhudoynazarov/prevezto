@@ -16,7 +16,7 @@ if (empty($name) || empty($email)) {
   $response = ['message' => 'Please provide a valid email address.'];
 } else {
   // Send the input data to the mail address
-  $to = 'objednavky@prevezto.sk';
+  $to = 'digitalwebproducts@gmail.com';
   $subject = 'New Form Submission';
   $body = "Name: $name\nTel: $tel\nEmail: $email\nWherefrom: $wherefrom\nWhereto: $whereto\nMessage: $message";
   $headers = "From: $name <$email>";
