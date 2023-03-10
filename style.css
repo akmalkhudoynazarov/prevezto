@@ -15,9 +15,15 @@
     --white: #ffffff;
   }
 
+  html{
+    scroll-behavior: smooth;
+  }
+
   h1{
+    padding-top: 80px;
     font-size: clamp(2rem, 3vw, 3rem);
   }
+    
   h2{
     font-size: clamp(1.5rem, 2vw, 2rem);
     color: var(--brown);
@@ -37,6 +43,8 @@
     font-size: 1.1rem;
     color: var(--black);
   }
+
+/* Header */
   header {
     background-color: var(--red);
     position: fixed;
@@ -61,7 +69,12 @@
     gap: 60px;
   }
   .nav-branding {
-    font-size: 2em;
+    display: block;
+    width: 100px;
+    padding: 15px 10px 10px;
+  }
+  .nav-branding img{
+    width: 100%;
   }
   .nav-link {
     transition: 0.7s ease;
@@ -202,6 +215,8 @@
   }
   .about-us h2, .about-us p{
     text-align: center;
+    width: 80%;
+    margin: auto;
   }
   .about-container{
     padding-top: 50px;
@@ -210,6 +225,8 @@
     align-items:baseline;
     flex-wrap: wrap;
     text-align: center;
+    width: 80%;
+    margin: auto;
   }
   .about-container div{
     flex-basis: 32%;
@@ -230,6 +247,16 @@
  @media screen and (max-width: 768px) {
     .about-container div{
         flex-basis: 100%;
+    }
+    .about-us h2, .about-us p{
+      width: 95%;
+    }
+    .about-container{
+      width: 95%;
+    }
+    h1{
+      padding-top: 0px;
+      padding-bottom: 40px;
     }
  }
   
@@ -300,7 +327,7 @@ hr{
 /* Footer */
 .footer{
     position: relative;
-    background-color: var(--red);
+    background-color: var(--black);
 }
 footer{
     display: flex;

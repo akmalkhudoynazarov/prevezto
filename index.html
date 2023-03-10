@@ -12,16 +12,16 @@
 <body>
   <header>
     <nav class="navbar">
-      <a href="" class="nav-branding">Logo</a>
+      <a href="" class="nav-branding"><img src="./img/logo.png" alt=""></a>
       <ul class="nav-menu">
-        <li class="nav-item"><a href="" class="nav-link">O nás</a></li>
-        <li class="nav-item"><a href="" class="nav-link">Služby</a></li>
+        <li class="nav-item"><a href="#about-us" class="nav-link">O nás</a></li>
+        <li class="nav-item"><a href="#services" class="nav-link">Služby</a></li>
         <li class="nav-item">
-          <a href="" class="nav-link">Typy Prepravy</a>
+          <a href="#prepravy" class="nav-link">Typy Prepravy</a>
         </li>
-        <li class="nav-item"><a href="" class="nav-link">Rychly Dopyt</a></li>
+        <li class="nav-item"><a href="#booking" class="nav-link">Rychly Dopyt</a></li>
         <li class="nav-item"><a href="" class="nav-link">VOP</a></li>
-        <li class="nav-item"><a href="" class="nav-link">Kontakt</a></li>
+        <li class="nav-item"><a href="#booking" class="nav-link">Kontakt</a></li>
       </ul>
       <div class="hamburger">
         <span class="bar"></span>
@@ -38,13 +38,13 @@
         Medzinárodnú prepravu
       </h1>
 
-      <a href="" class="hero-btn">Rýchly Dopyt</a>
+      <a href="#booking" class="hero-btn">Rýchly Dopyt</a>
     </div>
 
     <div class="invisible-height"></div>
 
     <!-- About us -->
-    <div class="about-us">
+    <div class="about-us" id="about-us">
       <h2>O NÁS</h2>
       <hr>
       <p>
@@ -78,7 +78,7 @@
     </div>
 
     <!-- Sluzby -->
-    <div class="about-us services">
+    <div class="about-us services" id="services">
       <h2>SLUŽBY</h2>
       <hr>
       <p>Medzi naše hlavné devízy patrí vnútroštátna a medzinárodná preprava
@@ -119,7 +119,7 @@
     </div>
 
     <!-- TYPY PREPRAVY -->
-    <div class="about-us">
+    <div class="about-us" id="prepravy">
       <h2>TYPY PREPRAVY</h2>
       <hr>
       <p>Zameriavame sa na prepravné množstvo od 1 palety vo vozidle do 3,5t až po 34 paliet vjednom alebo viacerých kamiónech</p>
@@ -235,11 +235,11 @@
       <p class="btn-container""><a href="" class=" hero-btn-2">Rýchly Dopyt</a></p>
     </div>
 
-    <div class="about-us booking">
+    <div class="about-us booking" id="booking">
       <h2>DOPYT/OBJEDNÁVKA</h2>
       <div class="about-container booking-container">
         <div>
-          <form action="contactget.php" method="post">
+          <form method="post">
             <input type="text" id="name" placeholder="Meno a Priezvisko" required><br>
             <input type="tel" id="tel" placeholder="Mobil" required><br>
             <input type="email" id="email" placeholder="Email" required><br>
@@ -248,14 +248,7 @@
             <textarea id="message" style="resize:vertical;" rows="5" placeholder="Detail prepravy"></textarea><br><br>
             <button class="hero-btn-2" type="submit">Odoslať</button>
           </form>
-          <?php
-          session_start(); // Start the session
-
-          if (isset($_SESSION['response'])) {
-            echo '<div class="response">' . $_SESSION['response'] . '</div>';
-            unset($_SESSION['response']); // Unset the response variable
-          }
-          ?>
+          <div id="result" style="color: black"></div>
         </div>
         <div>
           <h4>OBJEDNÁVKY</h4>
@@ -295,7 +288,9 @@
     </div>
 
   </main>
+  <script src="menu.js"></script>
   <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script>
     let year = new Date().getFullYear();
     document.getElementById('currentYear').textContent = year;
